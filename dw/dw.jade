@@ -1,0 +1,109 @@
+mixin html5
+  doctype html
+  html(lang="es")
+    if block
+      block
+
+mixin head(titleTxt, links, keywords, description)
+  head
+    meta(charset="utf-8")
+    title=titleTxt
+    meta(name="description" content=description)
+    meta(name="keywords" content=keywords)
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="icon", type="image/png", href="favicon.png")
+    - each ls in links
+      link(rel="stylesheet", href=ls)  
+    if block
+      block
+
+mixin menu(activePage, nav, type, prefix, suffix)
+  //Prefix / Suffix actions
+  - prefix = (prefix ? prefix : "")
+  - suffix = (suffix ? suffix : ".html")
+  
+  - prefix = (prefix==' ' ? "" : prefix)
+  - suffix = (suffix==' ' ? "" : suffix)
+  
+  //Creator
+  ul.listMain(class=(type === 'horizontal' ? "horizontal" : "")  )
+    if type == 'horizontal'
+      - var howMany = nav.length
+      - var widthCol = Math.round(12/howMany)
+    - each n in nav
+      li(class=(type === 'horizontal' ? "col#{widthCol}" : "") )
+        +menuListLiA(n[1], n[0], prefix, suffix, activePage)
+        if n[2]
+          ul.listSub
+            - each ni in n[2]
+              li: +menuListLiA(ni[1], ni[0], prefix, suffix, activePage)
+
+
+
+
+mixin menuListLI()
+  a(href="#{n[1]}.html", class=activePage=== "#{n[1]}" ? "active" : "") !{n[0]}
+  if n[2]
+    ul.listSub
+      - each ni in n[2]
+        li: a(href="#{ni[1]}.html", class=activePage=== "#{ni[1]}" ? "active" : "") !{ni[0]}
+
+mixin menuListLiA(url, text, prefix, suffix, activePage)
+  a(href="#{prefix}#{url}#{suffix}", class=activePage=== "#{url}" ? "active" : "") !{text}
+
+
+mixin scripts()
+  - each sc in javascripts
+    script(src="#{sc}")
+      
+      
+mixin slider(classS, ...items)
+  .slider(class=classS)
+    each item in items
+      if classS == 'multiplebox'
+        div: a(href=item).box: img(src=item).w100
+      else
+        div: img(src=item).w100
+mixin sliderbg(background, ...items)
+  .bgslider(data=background)
+    each item in items
+      div(data="#{item}")
+
+
+mixin formSimple(para, de, asunto)
+  form(action="#").simple
+    +formInput('hidden', '_to', 0,0,0, para)
+    +formInput('hidden', '_from',0,0,0, de)
+    +formInput('hidden', '_subject',0,0,0, asunto)
+    .container
+      .col12
+        +formInput('text', 'Nombre', 'Nombre:', 'Ingresa tu nombre', true)
+    .container
+      .col6
+        +formInput('email', 'Correo', 'Correo electrónico:', 'usuario@dominio.com', true)
+      .col6
+        +formInput('tel', 'Tel', 'Número telefónico:', '(lada) + Dígitos', false)
+    .container
+      .col12
+        if block
+          block
+    .container
+      .col12
+        +formInput('textarea', 'Mensaje', 'Mensaje:', 'Escriba su mensaje', true)
+
+    .container
+      .col6.resultado
+      .col6
+        button(type="submit") Enviar
+    
+      
+  
+mixin formInput(typef, namef, labelf, placeholderf, requiredf, valuef)  
+  if typef=='textarea'
+    if labelf
+      label(for=namef)=labelf
+    textarea(name=namef, placeholder=placeholderf, required=requiredf, value=valuef)
+  else
+    if labelf
+      label(for=namef)=labelf
+    input(type=typef, name=namef, placeholder=placeholderf, required=requiredf, value=valuef)

@@ -1,0 +1,150 @@
+include site/_config.jade
+
+
+
+mixin navInline()
+  nav.insection
+    .container
+      a(href="#").col4.col-t6.push-t3.col-m10.push-m1.logo: img(src="site/img/funfashionpet_horizontal.png", alt="Fun Fashion Pet").w100
+      .col8.col-t12.col-m12: +menu('index', menu, 'horizontal', '#', ' ')
+
+
++html5
+  +head(title, stylesheets, keywords, description)
+  body    
+  
+    
+
+    section#inicio
+      header
+        .container
+          .col3.col-t4.push-t0.col-m6.push-m0
+            a(href=dominio).logo: img(src="site/img/funfashionpet.png", alt="Fun Fashion Pet").w100
+          .col8.push1.col-t12.push-t0.col-m12.push-m0.navigation
+            nav: +menu('index', menu, 'horizontal', '#', ' ')
+      .container
+        .col6.col-m10.slogan
+          img(src="site/img/inicio_soap.png", alt="Los cortes y estilos más divertidos para tu mascota").floating.w100
+      
+      
+      a(href="#").promocion.box PROMOCIÓN DEL MES
+             
+    section#mascotas-felices
+      +navInline
+      .container
+        .col6.col-t12.col-m12
+          h2 MASCOTAS FELICES
+            span EN FUN FASHION PET
+        .col6.col-t12.col-m12
+          p.sectionText Nuestro propósito principal es brindarle a tu mascota el mejor trato, la mejor estancia y una experiencia agradable que lo relaje y lo haga sentir como en una segunda casa.
+      
+      mixin desdeFB
+        a(href="http://facebook.com", target="_blank") ...desde 
+          span.fb F
+          span acebook
+        
+      .container.fbStatus
+        .col6.col-m12.facebookStatus
+          .container
+            .col6.col-t12.col-m12.image() &nbsp;
+            .col6.col-t12.col-m12.status
+              p
+              +desdeFB
+        .col6.col-m12.facebookStatus
+          .container
+            .col6.col-t12.col-m12.image() &nbsp;
+            .col6.col-t12.col-m12.status
+              p 
+              +desdeFB
+        .clearfix
+        .col6.col-m12.facebookStatus
+          .container
+            .col6.col-t12.col-m12.image() &nbsp;
+            .col6.col-t12.col-m12.status
+              p
+              +desdeFB
+        .col6.col-m12.facebookStatus
+          .container
+            .col6.col-t12.col-m12.image() &nbsp;
+            .col6.col-t12.col-m12.status
+              p 
+              +desdeFB
+        .clearfix
+      .clearfix
+    .callFb
+      .container
+        .col4 &nbsp;
+        .col8
+          p ¿Quieres conocer más historias y estar al tanto de nuestras publicaciónes?
+          h4 Visita nuestro 
+            strong Facebook
+            |  y regálanos un 
+            strong Like
+          a(href="https://www.facebook.com/pages/FUN-Fashion-PET/556862554433643?fref=ts", target="_blank").fa.fa-facebook-square
+      
+    section#estetica-y-spa
+      +navInline
+      .container
+        .col6.col-t12.col-m12
+          h2 Estética & Spa
+            span LIMPIOS Y FRESCOS
+          p.sectionText Contamos con una diversidad de formas para lograr que tu mascota este siempre limpio, relajado y contento.
+          +art('estetica_mascotas', 'Estética para mascotas', 'Lo bañamos y cuidamos que todo en él este fresco y limpio.')
+          +art('estetica_pet', 'Pet grooming', 'Le damos estilo a su melena y  destacamos sus mejores características.')
+          +art('estetica_masaje', 'Masaje relajante y aromaterapia', 'Tu mascota también necesita relajarse y de paso mejorar su salud con aceites naturales.')
+          .clearfix
+        .clearfix
+      .clearfix
+    section#para-tu-mascota
+      +navInline
+      .container
+        .col6.col-t12.col-m12
+          h2 Para tu mascota
+            span SERVICIOS Y PRODUCTOS
+          p.sectionText También ofrecemos otros servicios auxiliares y la venta de productos de alta calidad para nuestros amigos.
+          +art('servicio_guarderia', 'Guardería', 'Te cuidamos a tu mascota desde unos minutos hasta todo el día. No te preocupes, aquí se la pasará ¡super!.')
+          +art('servicio_pension', 'Pensión', '¿Tienes que salir y no quieres dejar a tu amigo solo?. Aquí hay un espacio para él. Se sentirá como en casa.')
+          +art('servicio_paseos', 'Paseos', 'Si no tienes tiempo de sacarlo a pasear, nosotros lo hacemos por tí.')
+          +art('servicio_alimento', 'Alimento, medicamento y accesorios', 'Lo que necesites, si no lo tenemos lo conseguimos. Pregunta por disponibilidad. Manejamos marcas de la más alta calidad.')
+    section#visitanos
+      +navInline
+      .container
+        .col6.col-t12.col-m12
+          h2 Visítanos
+            span TE ESPERAMOS
+        .col6.col-t12.col-m12
+          p.sectionText Nos encontramos ubicados en 
+            strong.pink Genaro García #137
+            |  en la colonia 
+            strong Jardín Balbuena
+            |  , Del. V. Carranza.
+      .container
+        .col6.col-t12.col-m12
+          article.container
+            .col4.col-m11.push-m1: img(src="site/img/llamaomensajea.png", alt="Llama o mensajea")
+            .col8.col-m12
+              h4 Llama o mensajea
+                .whats.fa.fa-whatsapp
+              small Por teléfono o Whatsapp®
+              p Agenda una cita, pide informes o platícanos tu duda.
+          .container.tel 044 - 55 - 66 09 - 87 11
+        .col6.col-t12.col-m12
+          #map
+            | <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.9302878714016!2d-99.1062951!3d19.415417800000018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fea1664be49f%3A0x9a0cc3d4dde8b584!2sFUN+FASHION+PET!5e0!3m2!1ses!2smx!4v1441760898610" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+      .container.secFB
+        .col12
+          p Visita nuestro 
+            span
+              a(href="https://www.facebook.com/pages/FUN-Fashion-PET/556862554433643?fref=ts", target="_blank")
+                i.fa.fa-facebook-square 
+                span  Facebook
+            |  y déjanos tus comentarios o dudas
+    
+      footer
+        .container
+          .col2.push5
+            a(href=dominio).logo: img(src="site/img/funfashionpet.png", alt="Fun Fashion Pet").w100 
+          .col12
+            p Fun Fashion Pet. Estética y Spa. 2015
+                
+    +scripts

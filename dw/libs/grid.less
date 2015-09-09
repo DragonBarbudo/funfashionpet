@@ -1,0 +1,135 @@
+
+/* COLUMNS GRID */
+@containerWidth : 960px;
+.container{
+  width: @containerWidth;
+  margin: 0 auto;
+  .clearfix;
+  @media @tablet{
+    width: 480px;
+  }
+  @media @mobile{
+    width: 100%;
+  }
+  .container{ width: 100%; }
+}
+@maxWidth : 100; //Responsive
+@columns: 12;
+@gutter: 1.041;
+@column : round( (@maxWidth/@columns) - (@gutter*2) , 5);
+.col(@cols, @tabletcols:6, @mobilecols:12, @responsive:true){
+  display: block;
+  float: left;
+  width:  unit(((@column * @cols) + ( (@gutter*2) * ( @cols - (1) ) )), %);
+  margin: 0  unit(@gutter, %);
+  & when (@responsive=true){
+    .col-t(@tabletcols);
+    .col-m(@mobilecols);
+  }
+}
+
+.col-t(@tabletcols:@columns/2){
+  @media @tablet{
+    width:  unit(((@column * @tabletcols) + ( (@gutter*2) * ( @tabletcols - (1) ) )), %);
+  }
+}
+.col-m(@mobilecols:@columns){
+  @media @mobile{
+    width:  unit(((@column * @mobilecols) + ( (@gutter*2) * ( @mobilecols - (1) ) )), %);
+  }
+}
+
+.push(@offset:1, @tabletOffset:@offset, @mobileOffset: 0, @responsive:false){
+  margin-left: unit( @gutter + (@column * @offset) + ((@gutter*2)*@offset) , %);
+  & when (@responsive=true){
+    .push-t(@tabletOffset);
+    .push-m(@mobileOffset);
+  }
+}
+.push-t(@tabletOffset){
+  @media @tablet{
+    margin-left: unit( @gutter + (@column * @tabletOffset) + ((@gutter*2)*@tabletOffset) , %);
+  }
+}
+.push-m(@mobileOffset){
+  @media @mobile{
+    margin-left: unit( @gutter + (@column * @mobileOffset) + ((@gutter*2)*@mobileOffset) , %);
+  }
+}
+
+
+//Display GRID para container
+.grid{
+  background: url(http://griddle.it/940-12-20?num=0) repeat-y;
+  background-size:940px;
+  background-position: center;
+  outline: 1px solid rgba(0,0,0,0.2);
+  position: relative;
+  @media @tablet{
+    background: url(http://griddle.it/464-12-8?num=0) repeat-y;
+    background-size: 470px;
+    background-position: 4px;
+  }
+  @media @mobile{
+    background: url(http://griddle.it/960-12-20?num=0) repeat-y;
+    background-size: 100%-(@gutter*2);
+    background-position:center;
+  }
+  &:before{
+    content:".container";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.6em;
+    color:#aaa;
+  }
+}
+// HTML AS FRAMEWORK COLUMN GRID
+// cols
+.generator-c(@columns);
+.generator-c(@n, @i:1) when (@i<=@n){
+  .col@{i}{
+    .col(@i, @i, @i, false);
+  }
+  .generator-c(@n, (@i+1));
+}
+// col-t
+.generator-ct(@columns);
+.generator-ct(@n, @i:1) when (@i<=@n){
+  .col-t@{i}{
+    .col-t(@i);
+  }
+  .generator-ct(@n, (@i+1));
+}
+// col-m
+.generator-cm(@columns);
+.generator-cm(@n, @i:1) when (@i<=@n){
+  .col-m@{i}{
+    .col-m(@i);
+  }
+  .generator-cm(@n, (@i+1));
+}
+// push
+.generator-p(@columns);
+.generator-p(@n, @i:0) when (@i<=@n){
+  .push@{i}{
+    .push(@i, @i, @i, false);
+  }
+  .generator-p(@n, (@i+1));
+}
+// push-t
+.generator-pt(@columns);
+.generator-pt(@n, @i:0) when (@i<=@n){
+  .push-t@{i}{
+    .push-t(@i);
+  }
+  .generator-pt(@n, (@i+1));
+}
+// push-m
+.generator-pm(@columns);
+.generator-pm(@n, @i:0) when (@i<=@n){
+  .push-m@{i}{
+    .push-m(@i);
+  }
+  .generator-pm(@n, (@i+1));
+}

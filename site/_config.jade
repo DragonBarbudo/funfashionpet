@@ -1,0 +1,45 @@
+include ../dw/dw.jade
+
+- var domain = "index.html"
+
+//- METAS
+- var title = "Fun Fashion Pet"
+- var keywords = "Mascotas, estética canina, guardería canina, pensión canina, paseador de perros, alimento para perro, medicamentos veterinarios, accesorios para mascotas, jardín balbuena"
+- var description = "Estética y Spa ubicada en la col. Jardín Balbuena. Ofrecemos Estética, Pet Grooming, Masaje y Aromaterapia,, Guardería, Pensión, Paseos, Alimentos, medicamentos y accesorios."
+
+//- STYLESHEETS
+- var stylesheets = []
+- stylesheets.push('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+- stylesheets.push('http://fonts.googleapis.com/css?family=Jaldi:400,700')
+- stylesheets.push('http://fonts.googleapis.com/css?family=Gloria+Hallelujah')
+- stylesheets.push('http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css')
+- stylesheets.push('https://cdnjs.cloudflare.com/ajax/libs/jquery.swipebox/1.4.1/css/swipebox.min.css')
+- stylesheets.push('site/css/_style.css') //Main style
+
+//- JAVASCRIPTS
+- var javascripts = []
+- javascripts.push('http://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.core.min.js')
+- javascripts.push('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+- javascripts.push('http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js')
+- javascripts.push('https://cdnjs.cloudflare.com/ajax/libs/jquery.swipebox/1.4.1/js/jquery.swipebox.min.js')
+- javascripts.push('https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js')
+- javascripts.push('https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/2.3.2/scrollReveal.min.js')
+- javascripts.push('site/js/_script.js') //Main Js
+
+//- MENU
+- var menu = [] //- menu.push('PageName', 'Slug')
+- menu.push(['FUN FASHION PET <small>Macotas felices</small>', 'mascotas-felices'])
+- menu.push(['ESTÉTICA & SPA <small>Limpios y frescos</small>', 'estetica-y-spa'])
+- menu.push(['PARA TU MASCOTA <small>Servicios y productos</small>', 'para-tu-mascota'])
+- menu.push(['VISÍTANOS <small>Te esperamos</small>', 'visitanos'])
+
+
+
+
+
+mixin art(img, name, text)
+  article.container
+    .col4.col-m11.push-m1: img(src="site/img/#{img}.png", alt="#{name}")
+    .col8.col-m12
+      h4=name
+      p=text

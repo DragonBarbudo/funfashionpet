@@ -1,0 +1,25 @@
+/* MEDIA QUERIES */
+//@mobile:      ~"only screen and (max-width: 480px)";
+//@tablet:      ~"only screen and (min-width: 481px) and (max-width: 959px)";
+
+
+@containerWidthLow : ( @containerWidth - 1 );
+@containerWidthTabletHigh : (@containerWidthTablet + 1);
+
+@mediamaxin: ~"only screen and (max-width: ";
+@mediamin:   ~"only screen and (min-width: ";
+@mediamax:   ~") and (max-width: ";
+@mediaend:   ~")";
+
+
+
+@mobile:  ~"@{mediamaxin}@{containerWidthTablet}@{mediaend}";
+@tablet:  ~"@{mediamin}@{containerWidthTabletHigh}@{mediamax}@{containerWidthLow}@{mediaend}";
+@desktop: ~"@{mediamin}@{containerWidth}@{mediaend}";
+
+
+
+.nodesktop{ @media @desktop{display:none;} }
+.notablet{ @media @tablet, @mobile{ display: none; } }
+.nomobile{ @media @mobile{ display: none; } }
+/* ####################################################### */

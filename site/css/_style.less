@@ -1,0 +1,407 @@
+@import '../../dw/dw.less';
+//CONTAINER WIDTHS:
+@containerWidth: 960px;
+@containerWidthTablet: 480px;
+
+@b: #222;
+@w: #f5f5f5;
+@g: #939598;
+@main: #009BC6;
+@sec: #EF96BF;
+@fb: #46629E;
+
+.font{
+  font-family: 'Jaldi', sans-serif;
+}
+.font2{
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+body{
+  .font;
+
+}
+
+
+
+section{
+  @media @mobile{
+    min-height: 800px;
+  }
+}
+
+#inicio{
+  height: 100%;
+  background: url(../img/bg_inicio.jpg) center 80px no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  @media @tablet{
+    padding-top: 100px;
+  }
+  @media @mobile{
+    padding-top: 140px;
+    background: url(../img/bg_inicio.jpg) -500px 140px no-repeat;
+  }
+}
+
+.promocion{
+  position: absolute;
+  top:70%;
+  right: -20px;
+  padding: 14px 80px 14px 20px;
+  background: @sec;
+  .border-radius(10px 0 0 10px);
+  .font;
+  color:@w;
+  font-weight: bold;
+  font-size: 1.3em;
+  text-shadow: -1px 2px 0px @sec/1.2;
+  text-decoration: none;
+  border: 4px solid @sec/1.1;
+  border-right:none;
+  .rotate(-15deg);
+  @media @mobile{
+    top: 80%;
+  }
+}
+#swipebox-overlay{
+  background: @main;
+}
+
+@media @mobile{
+.slogan{
+  margin-top: 150px;
+}
+}
+header{
+  padding: 40px 0;
+  nav{
+    margin-top: 22px;
+    ul{
+      li{
+        @media @mobile{
+          .col(6) !important;
+          padding-bottom: 15px;
+        }
+        a{
+          color: @main;
+          small{
+            display: block;
+            color:@sec;
+            line-height: 0.9em;
+          }
+        }
+      }
+    }
+  }
+  .navigation{
+    @media @tablet, @mobile{
+      width: 100%;
+      position: absolute;
+      margin: 0;
+      top: 0;
+      left: 0;
+      background:#fff;
+      padding-bottom: 20px;
+    }
+
+  }
+}
+
+nav.insection{
+  background: @sec;
+  padding: 10px 0;
+  margin-bottom: 60px;
+  .logo{
+    margin-top: 10px;
+  }
+  ul{
+    li{
+      @media @mobile, @tablet{
+        .col(6) !important;
+        padding-bottom: 5px;
+        padding-top: 14px;
+      }
+      a{
+        color: @main;
+        small{
+          display: block;
+          color:@w;
+          line-height: 0.9em;
+
+        }
+      }
+    }
+  }
+}
+
+
+#mascotas-felices{
+  background: @w;
+  .clearfix;
+  padding-bottom: 140px;
+  h2{
+    color:@sec;
+    font-size: 2.4em;
+    @media @mobile{
+      font-size: 1.8em;
+    }
+    span{
+      display: block;
+      line-height: 0.5em;
+      font-weight: lighter;
+      font-size: 1.2em;
+    }
+  }
+  .facebookStatus{
+    min-height: 280px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background: @sec;
+    position: relative;
+    height: 100%;
+    &:before{
+      content:"";
+      width: 64px; height: 64px;
+      background: url(../img/icon_cut.png) center no-repeat;
+      position: absolute;
+      left: 50%; top: 50%;
+      margin-left: -42px; margin-top: -32px;
+    }
+    &:nth-child(1), &:nth-child(4){
+      background: @main;
+      &:before{
+        background: url(../img/icon_paw.png) center no-repeat;
+      }
+    }
+    .font2;
+    .image{
+      min-height: 280px;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      margin-left: 0;
+    }
+    .status{
+      p{
+        margin: 20px 25px;
+        color:@w;
+      }
+      a{
+        position: absolute;
+        right: 10px;bottom: 10px;
+        font-size: 0.9em;
+        color:@w;
+        text-decoration: none;
+        span{
+          position: relative;
+          z-index: 1;
+          &.fb{
+            &:after{
+              position: absolute;
+              content:"";
+              background: @fb;
+              .border-radius(50%);
+              width: 22px; height: 22px;
+              left: -8px;top: 3px;
+              z-index:-2;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.sectionText{
+  color:@g;
+  font-size: 1.1em;
+  line-height: 1.1em;
+  margin-top: 24px;
+}
+
+.callFb{
+  clear:both;
+  background: url(../img/bg_callFB.jpg) center no-repeat;
+  background-size: cover;
+  text-align: right;
+  padding: 80px 0;
+  p{
+    color:@g;
+  }
+  h4{
+    font-size: 1.5em;
+    .font2;
+    color:@main;
+    strong{
+      color:@fb;
+    }
+  }
+  a{
+    display: block;
+    margin: 10px 30px;
+    color:@fb;
+    font-size: 5em;
+    text-decoration: none;
+    &:hover{
+      color:@sec;
+    }
+  }
+}
+
+
+
+
+#estetica-y-spa{
+  background: url(../img/bg_estetica.jpg) center top no-repeat;
+  background-size: cover;
+  .clearfix;
+  padding-bottom: 140px;
+  h2{
+    color:@main;
+    font-size: 2.4em;
+    @media @mobile{
+      font-size: 1.8em;
+    }
+    span{
+      display: block;
+      line-height: 0.5em;
+      font-weight: lighter;
+      font-size: 1.2em;
+    }
+  }
+
+}
+
+article{
+  margin-top: 30px !important;
+  img{
+    margin-left: -20px;
+  }
+  h4{
+    line-height: 1.2em;
+    margin-top: 20px;
+    .font2;
+    font-size: 1.2em;
+    color:@main;
+  }
+  p{
+    margin-top: 10px;
+    .font;
+    color:@g;
+    line-height: 1.1em;
+  }
+}
+
+#para-tu-mascota{
+  background: url(../img/bg_mascota.jpg) center top no-repeat;
+  background-size: cover;
+  .clearfix;
+  padding-bottom: 140px;
+  h2{
+    color:@sec;
+    font-size: 2.4em;
+    @media @mobile{
+      font-size: 1.8em;
+    }
+    span{
+      display: block;
+      line-height: 0.5em;
+      font-weight: lighter;
+      font-size: 1.2em;
+    }
+  }
+
+  article{
+    margin-top: 10px !important;
+    h4{
+      color:@sec;
+    }
+  }
+}
+
+#visitanos{
+  .clearfix;
+  padding-bottom: 140px;
+  h2{
+    color:@main;
+    font-size: 2.4em;
+    @media @mobile{
+      font-size: 1.8em;
+    }
+    span{
+      display: block;
+      line-height: 0.5em;
+      font-weight: lighter;
+      font-size: 1.2em;
+    }
+  }
+  .sectionText{
+    padding-top: 32px;
+    strong{
+      font-weight: bold;
+      color:@main;
+      &.pink{color:@sec;}
+    }
+  }
+  article{
+    padding-top: 20px;
+    h4{ color:@sec; }
+    small{ color:@main; }
+    .whats{
+      color:#4BD65B;
+      font-size: 0.9em;
+      vertical-align: top;
+    }
+  }
+  .tel{
+    color:@sec;
+    .font2;
+    font-size: 2.1em;
+    text-align: center;
+    margin-top: 40px;
+    @media @mobile{
+      font-size: 1.8em;
+    }
+  }
+  #map{
+    padding: 20px 0;
+  }
+  .secFB{
+    margin-top: 50px !important;
+    margin-bottom: 80px !important;
+    text-align: center;
+    color: @main;
+    .font2;
+    font-size: 1.4em;
+    span{
+      color:@fb;
+      a{
+        color:@fb;
+        font-size: 2em;
+        text-decoration: none;
+        span{
+          font-size: 0.5em;
+        }
+        &:hover{
+          color:@sec;
+          span{
+            color:@sec;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer{
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9em;
+  color:@g;
+  p{
+    padding: 20px 0;
+  }
+}
