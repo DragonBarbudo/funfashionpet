@@ -2,7 +2,7 @@ var bgimgs = [];
 //GEN :
 // https://developers.facebook.com/tools/explorer/1651368258471958?method=GET&path=556862554433643%2Fphotos%2Fuploaded%3Ffields%3Did%2Cname%2Cimages%2Clink&version=v2.4
 // https://graph.facebook.com/oauth/access_token?%20client_id=1651368258471958&%20client_secret=477e7d1723f2030e057ea48daed5d436&%20grant_type=fb_exchange_token&%20fb_exchange_token=CURRENT_TOKEN
-var tokn = 'CAAXd6SJwiBYBAGGLBw4zSNnFuV6RCHymirswe85hpHDRCCshZBU8iFGEXeZBoGpupMlfry8cuPMuQtScZBt6UHSLBdQmMZB11Ae2hv79SFof1xiOTqcZB3hn5QqFjaifIsCRVnejL8nsvIVZBeHIGjT2BYXwgQSeJjrohhsZB4bUarPX0fIrEpXNgNnCqrZBq9kZD';
+var tokn = 'CAAXd6SJwiBYBAB2OIUZChqLQZATAfd0N0VuaSZBezYKfa0eZCqO3Rtj0wQzYJp9Y60vp1yrvjYMr49w9mXh6lDHTVqGcPDO2FRqdbxOm4MZA78qqQIz8pO3Dwz5ZCNmmnVY2YVNMO009tDRAe8s3cZCZAaTZBA4mixHdnxOvD6tEiccGHTz6uWnaJCfInvNbf0GsZD';
 window.fbAsyncInit = function() {
     FB.init({
       appId      : '1651368258471958',
