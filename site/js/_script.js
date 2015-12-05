@@ -2,7 +2,7 @@ var bgimgs = [];
 //GEN :
 // https://developers.facebook.com/tools/explorer/1651368258471958?method=GET&path=556862554433643%2Fphotos%2Fuploaded%3Ffields%3Did%2Cname%2Cimages%2Clink&version=v2.4
 // https://graph.facebook.com/oauth/access_token?%20client_id=1651368258471958&%20client_secret=477e7d1723f2030e057ea48daed5d436&%20grant_type=fb_exchange_token&%20fb_exchange_token=CURRENT_TOKEN
-var tokn = 'CAAXd6SJwiBYBAFm5nICoW8pZC6UCaZCAVqcjBGGqBZCJZCnELxsz2d4yyZBiIENGqhqoHk4CWsZCbxTQhTKgUbtZAjB0YsgtDGHzOifP2LXzRgGc7uzKOdVZCH4U5qkbbG6TEZBVoZCacYUmBB7zf3s9ZApZCby7TLc95EaiZBCzXUcI8n2MjtAfeQy5zPEPW21hnTl9hp171j2Vg9AZDZD';
+var tokn = 'CAAXd6SJwiBYBAGGLBw4zSNnFuV6RCHymirswe85hpHDRCCshZBU8iFGEXeZBoGpupMlfry8cuPMuQtScZBt6UHSLBdQmMZB11Ae2hv79SFof1xiOTqcZB3hn5QqFjaifIsCRVnejL8nsvIVZBeHIGjT2BYXwgQSeJjrohhsZB4bUarPX0fIrEpXNgNnCqrZBq9kZD';
 window.fbAsyncInit = function() {
     FB.init({
       appId      : '1651368258471958',
